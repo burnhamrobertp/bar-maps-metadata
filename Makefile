@@ -70,7 +70,10 @@ update_all_from_rowy: gen/schemas/map_list.json
 sync_to_webflow: gen/map_list.validated.json gen/types/map_list.d.ts gen/cdn_maps.validated.json gen/schemas/map_list.json gen/types/cdn_maps.d.ts
 	tsx scripts/js/src/sync_to_webflow.ts sync
 
+diff_webflow: gen/map_list.validated.json gen/types/map_list.d.ts gen/cdn_maps.validated.json gen/schemas/map_list.json gen/types/cdn_maps.d.ts
+	tsx scripts/js/src/diff_webflow.ts
+
 refresh_webflow_types:
 	tsx scripts/js/src/gen_webflow_types.ts scripts/js/src/webflow_types.ts
 
-.PHONY: clean test typecheck_scripts types update_all_from_rowy sync_to_webflow refresh_webflow_types
+.PHONY: clean test typecheck_scripts types update_all_from_rowy sync_to_webflow diff_webflow refresh_webflow_types
